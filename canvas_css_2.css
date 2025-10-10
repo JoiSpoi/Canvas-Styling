@@ -1,0 +1,163 @@
+/* ========================================
+    Theme variables
+======================================== */
+:root {
+    --surface: #23222b;           /* main containers */
+    --surface-2: #1c1b22;         /* header / elevated */
+    --text: #fbfbfe;
+    --info: #84c6ff;
+    --primary: #00cadb;
+    --primary-hover: #39d0e0;     /* darker than #61dce9 for better contrast */
+    --primary-active: #1ab7c5;    /* avoid very light active for contrast */
+    --active-hover-background: #18343c;
+    --grey-40: #3a3944;
+    --muted: #b9b8c4;
+}
+
+html {
+    color-scheme: dark;
+}
+
+/* Scope everything to Canvas app shell to avoid collateral effects */
+body.ic-app {
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+/* ========================================
+    Header
+======================================== */
+body.ic-app #header {
+    background-color: var(--surface-2);
+}
+
+/* Prefer currentColor for icons; set color on link, not svg fill */
+body.ic-app #header a.ic-app-header__menu-list-link {
+    color: var(--text);
+    background-color: transparent; /* keep explicit */
+    transition: background-color 120ms ease, color 120ms ease;
+}
+body.ic-app #header li.ic-app-header__menu-list-item:hover {
+    background-color: var(--grey-40);
+}
+body.ic-app #header li.ic-app-header__menu-list-item--active a.ic-app-header__menu-list-link {
+    color: var(--primary-active);
+}
+body.ic-app #header li.ic-app-header__menu-list-item--active:hover {
+    background-color: var(--active-hover-background);
+}
+
+/* If icons don't inherit color, as a fallback: */
+body.ic-app #header li.ic-app-header__menu-list-item a div svg {
+    fill: currentColor;
+}
+
+/* ========================================
+    Global nav (left)
+======================================== */
+body.ic-app #sticky-container a {
+    color: var(--text);
+    transition: background-color 120ms ease, color 120ms ease;
+}
+body.ic-app #sticky-container a:hover {
+    background-color: var(--grey-40);
+}
+body.ic-app #sticky-container a.active {
+    color: var(--primary-active);
+}
+body.ic-app #sticky-container a.active:hover {
+    background-color: var(--active-hover-background);
+}
+
+/* ========================================
+    Links
+======================================== */
+body.ic-app a {
+    color: var(--primary);
+    text-decoration: none;
+}
+body.ic-app a:hover,
+body.ic-app a:focus-visible {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+body.ic-app a:active {
+    color: var(--primary-active);
+}
+body.ic-app a:visited {
+    color: var(--info);
+}
+
+/* Visible keyboard focus for interactive controls */
+body.ic-app :where(a, button, [role="button"], .btn):focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ========================================
+    Hide specific navbar items (lighter + faster than :has)
+======================================== */
+#global_nav_conversations_link,
+#global_nav_history_link,
+#context_external_tool_262_menu_item,
+div.ic-app-header__secondary-navigation #primaryNavToggle {
+    display: none !important; /* keep !important here to beat inline styles */
+}
+
+/* ========================================
+    Page chrome
+======================================== */
+body.ic-app .course-title { color: var(--text); }
+body.ic-app .header-bar { background-color: transparent; }
+
+body.ic-app #planner-todosidebar-item-list { color: var(--text); }
+
+body.ic-app #breadcrumbs {
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+body.ic-app #left-side > a { color: var(--text); }
+
+/* Badge: keep readable or intentionally hide */
+body.ic-app .nav-badge {
+    background-color: var(--grey-40);
+    color: var(--text);
+    border-radius: 9999px;
+    padding: 0 0.5em;
+    font-weight: 600;
+}
+
+/* Buttons */
+body.ic-app .btn {
+    color: var(--text);
+    background-color: var(--grey-40);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+body.ic-app .btn:hover {
+    background-color: var(--active-hover-background);
+    border-color: rgba(255,255,255,0.24);
+}
+body.ic-app .btn:active {
+    background-color: #123038;
+    border-color: rgba(255,255,255,0.32);
+}
+
+/* Modules */
+body.ic-app .item-group-container {
+    background-color: var(--surface);
+}
+
+/* Optional removals (keep as-is if you really want them gone) */
+body.ic-app .module-sequence-footer,
+body.ic-app #immersive_reader_mount_point {
+    display: none !important;
+}
+
+/* ========================================
+    Motion preferences
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+}
