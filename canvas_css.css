@@ -26,6 +26,8 @@ body {
 }
 #header li.ic-app-header__menu-list-item--active {
     fill: var(--active) !important;
+}
+#header a.ic-app-header__menu-list-link {
     background-color: inherit !important;
 }
 #header li.ic-app-header__menu-list-item--active:hover {
