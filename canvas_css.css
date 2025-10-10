@@ -90,12 +90,19 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
 }
 
 .nav-badge {
-    background-color: var(--info) !important;
+    background-color: var(--transparent) !important;
     color: var(--transparent) !important;
 }
 
+/* Right side buttons */
 .btn {
     background-color: inherit !important;
+    color: var(--text) !important;
+}
+
+/* Modules background */
+.item-group-container {
+    background-color: var(--box);
 }
 
 /* Remove previous/next buttons in pages */
