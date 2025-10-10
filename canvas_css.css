@@ -63,10 +63,10 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
 }
 
 /* Nab bar */
-#section-tabs a {
+#sticky-container a {
     color: var(--text) !important;
 }
-#section-tabs a:hover {
+#sticky-container a:hover {
     background: var(--Dark-Grey-40) !important;
 }
 a.active {
