@@ -19,7 +19,7 @@ html {
 }
 
 /* Scope everything to Canvas app shell to avoid collateral effects */
-body.ic-app {
+body.home {
     background-color: var(--surface);
     color: var(--text);
 }
@@ -27,69 +27,69 @@ body.ic-app {
 /* ========================================
     Header
 ======================================== */
-body.ic-app #header {
+body.home #header {
     background-color: var(--surface-2);
 }
 
 /* Prefer currentColor for icons; set color on link, not svg fill */
-body.ic-app #header a.ic-app-header__menu-list-link {
+body.home #header a.ic-app-header__menu-list-link {
     color: var(--text);
     background-color: transparent; /* keep explicit */
     transition: background-color 120ms ease, color 120ms ease;
 }
-body.ic-app #header li.ic-app-header__menu-list-item:hover {
+body.home #header li.ic-app-header__menu-list-item:hover {
     background-color: var(--grey-40);
 }
-body.ic-app #header li.ic-app-header__menu-list-item--active a.ic-app-header__menu-list-link {
+body.home #header li.ic-app-header__menu-list-item--active a.ic-app-header__menu-list-link {
     color: var(--primary-active);
 }
-body.ic-app #header li.ic-app-header__menu-list-item--active:hover {
+body.home #header li.ic-app-header__menu-list-item--active:hover {
     background-color: var(--active-hover-background);
 }
 
 /* If icons don't inherit color, as a fallback: */
-body.ic-app #header li.ic-app-header__menu-list-item a div svg {
+body.home #header li.ic-app-header__menu-list-item a div svg {
     fill: currentColor;
 }
 
 /* ========================================
     Global nav (left)
 ======================================== */
-body.ic-app #sticky-container a {
+body.home #sticky-container a {
     color: var(--text);
     transition: background-color 120ms ease, color 120ms ease;
 }
-body.ic-app #sticky-container a:hover {
+body.home #sticky-container a:hover {
     background-color: var(--grey-40);
 }
-body.ic-app #sticky-container a.active {
+body.home #sticky-container a.active {
     color: var(--primary-active);
 }
-body.ic-app #sticky-container a.active:hover {
+body.home #sticky-container a.active:hover {
     background-color: var(--active-hover-background);
 }
 
 /* ========================================
     Links
 ======================================== */
-body.ic-app a {
+body.home a {
     color: var(--primary);
     text-decoration: none;
 }
-body.ic-app a:hover,
-body.ic-app a:focus-visible {
+body.home a:hover,
+body.home a:focus-visible {
     color: var(--primary-hover);
     text-decoration: underline;
 }
-body.ic-app a:active {
+body.home a:active {
     color: var(--primary-active);
 }
-body.ic-app a:visited {
+body.home a:visited {
     color: var(--info);
 }
 
 /* Visible keyboard focus for interactive controls */
-body.ic-app :where(a, button, [role="button"], .btn):focus-visible {
+body.home :where(a, button, [role="button"], .btn):focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
@@ -107,20 +107,20 @@ div.ic-app-header__secondary-navigation #primaryNavToggle {
 /* ========================================
     Page chrome
 ======================================== */
-body.ic-app .course-title { color: var(--text); }
-body.ic-app .header-bar { background-color: transparent; }
+body.home .course-title { color: var(--text); }
+body.home .header-bar { background-color: transparent; }
 
-body.ic-app #planner-todosidebar-item-list { color: var(--text); }
+body.home #planner-todosidebar-item-list { color: var(--text); }
 
-body.ic-app #breadcrumbs {
+body.home #breadcrumbs {
     background-color: var(--surface);
     color: var(--text);
 }
 
-body.ic-app #left-side > a { color: var(--text); }
+body.home #left-side > a { color: var(--text); }
 
 /* Badge: keep readable or intentionally hide */
-body.ic-app .nav-badge {
+body.home .nav-badge {
     background-color: var(--grey-40);
     color: var(--text);
     border-radius: 9999px;
@@ -129,29 +129,29 @@ body.ic-app .nav-badge {
 }
 
 /* Buttons */
-body.ic-app .btn {
+body.home .btn {
     color: var(--text);
     background-color: var(--grey-40);
     border: 1px solid rgba(255,255,255,0.12);
     transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
-body.ic-app .btn:hover {
+body.home .btn:hover {
     background-color: var(--active-hover-background);
     border-color: rgba(255,255,255,0.24);
 }
-body.ic-app .btn:active {
+body.home .btn:active {
     background-color: #123038;
     border-color: rgba(255,255,255,0.32);
 }
 
 /* Modules */
-body.ic-app .item-group-container {
+body.home .item-group-container {
     background-color: var(--surface);
 }
 
 /* Optional removals (keep as-is if you really want them gone) */
-body.ic-app .module-sequence-footer,
-body.ic-app #immersive_reader_mount_point {
+body.home .module-sequence-footer,
+body.home #immersive_reader_mount_point {
     display: none !important;
 }
 
