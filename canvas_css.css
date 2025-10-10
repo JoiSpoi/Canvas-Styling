@@ -1,0 +1,64 @@
+/* Variables */
+:root {
+    --box: #23222b;
+    --text: #fbfbfe;
+    --info: #84c6ff;
+    --transparent: #00000000;
+}
+
+/* Base rules for the new styles */
+body {
+    background-color: var(--box) !important;
+    color: var(--text) !important;
+}
+
+/* Base link styles*/
+a {
+    text-decoration: none !important;
+    color: #00cadb !important;
+}
+a:hover {color: #61dce9 !important;}
+a:active {color: #a6ecf4 !important;}
+
+/* Remove previous/next buttons in pages */
+.module-sequence-footer {display: none !important;}
+
+/* Hiding navbar items */
+li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_history_link),#context_external_tool_262_menu_item,div.ic-app-header__secondary-navigation:has(#primaryNavToggle) {
+    display: none !important;
+}
+
+.sticky-toolbar {
+    background-color: var(--box) !important;
+}
+
+#breadcrumbs {
+    background-color: var(--box) !important;
+    color: var(--text) !important;
+}
+
+#left-side > a {
+    color: var(--text) !important;
+}
+
+.nav-badge {
+    background: var(--info) !important;
+    color: var(--transparent) !important;
+}
+
+.btn {
+    background: inherit !important;
+}
+
+/* Remove immersive reader */
+#immersive_reader_mount_point {
+    display: none !important;
+}
+
+/**/
+#section-tabs a {
+    color: var(--text) !important;
+}
+a.active {
+    background: white;
+}
