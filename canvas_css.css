@@ -4,6 +4,13 @@
     --text: #fbfbfe;
     --info: #84c6ff;
     --transparent: #00000000;
+
+    --primary: #00cadb;
+    --hover: #61dce9;
+    --active: #a6ecf4;
+
+    --Dark-Grey-40: #3a3944;
+
 }
 
 /* Base rules for the new styles */
@@ -15,10 +22,10 @@ body {
 /* Base link styles*/
 a {
     text-decoration: none !important;
-    color: #00cadb !important;
+    color: var(--primary) !important;
 }
-a:hover {color: #61dce9 !important;}
-a:active {color: #a6ecf4 !important;}
+a:hover {color: var(--hover) !important;}
+a:active {color: var(--active) !important;}
 
 /* Remove previous/next buttons in pages */
 .module-sequence-footer {display: none !important;}
@@ -55,10 +62,13 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
     display: none !important;
 }
 
-/**/
+/* Nab bar */
 #section-tabs a {
     color: var(--text) !important;
 }
+#section-tabs a:hover {
+    background: var(--Dark-Grey-40) !important;
+}
 a.active {
-    background: white;
+    color: var(--active) !important;
 }
