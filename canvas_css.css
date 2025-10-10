@@ -20,8 +20,35 @@ body {
     color: var(--text) !important;
 }
 
+/* Header menu */
 #header {
     background-color: var(--background) !important;
+}
+#header li.ic-app-header__menu-list-item--active {
+    fill: var(--active) !important;
+}
+#header li.ic-app-header__menu-list-item--active:hover {
+    background-color: var(--active-hover-background) !important;
+}
+#header li.ic-app-header__menu-list-item {
+    fill: var(--text)
+}
+#header li.ic-app-header__menu-list-item:hover {
+    background-color: var(--Dark-Grey-40);
+}
+
+/* Nav bar */
+#sticky-container a.active {
+    color: var(--active) !important;
+}
+#sticky-container a.active:hover {
+    background-color: var(--active-hover-background) !important;
+}
+#sticky-container a {
+    color: var(--text) !important;
+}
+#sticky-container a:hover {
+    background-color: var(--Dark-Grey-40) !important;
 }
 
 /* Base link styles*/
@@ -65,18 +92,4 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
 /* Remove immersive reader */
 #immersive_reader_mount_point {
     display: none !important;
-}
-
-/* Nab bar */
-#sticky-container a {
-    color: var(--text) !important;
-}
-#sticky-container a:hover {
-    background-color: var(--Dark-Grey-40) !important;
-}
-#sticky-container a.active {
-    color: var(--active) !important;
-}
-#sticky-container a.active:hover {
-    background-color: var(--active-hover-background) !important;
 }
