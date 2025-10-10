@@ -70,8 +70,12 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
     display: none !important;
 }
 
-.sticky-toolbar {
+.header_bar {
     background-color: var(--box) !important;
+}
+
+#planner-todosidebar-item-list {
+    color: var(--text) !important;
 }
 
 #breadcrumbs {
