@@ -62,22 +62,24 @@ a {
 a:hover {color: var(--hover) !important;}
 a:active {color: var(--active) !important;}
 
-/* Remove previous/next buttons in pages */
-.module-sequence-footer {display: none !important;}
-
 /* Hiding navbar items */
 li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_history_link),#context_external_tool_262_menu_item,div.ic-app-header__secondary-navigation:has(#primaryNavToggle) {
     display: none !important;
 }
 
-.header_bar {
-    background-color: var(--box) !important;
+/* Course title box */
+.course-title {
+    color: var(--text) !important;
+}
+.header-bar {
+    background-color: inherit !important;
 }
 
 #planner-todosidebar-item-list {
     color: var(--text) !important;
 }
 
+/* Breadcrumb */
 #breadcrumbs {
     background-color: var(--box) !important;
     color: var(--text) !important;
@@ -96,7 +98,8 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
     background-color: inherit !important;
 }
 
+/* Remove previous/next buttons in pages */
+.module-sequence-footer {display: none !important;}
+
 /* Remove immersive reader */
-#immersive_reader_mount_point {
-    display: none !important;
-}
+#immersive_reader_mount_point {display: none !important;}
