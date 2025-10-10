@@ -19,7 +19,7 @@ html {
 }
 
 /* Scope everything to Canvas app shell to avoid collateral effects */
-body.home {
+body {
     background-color: var(--surface);
     color: var(--text);
 }
@@ -27,69 +27,69 @@ body.home {
 /* ========================================
     Header
 ======================================== */
-body.home #header {
+body #header {
     background-color: var(--surface-2);
 }
 
 /* Prefer currentColor for icons; set color on link, not svg fill */
-body.home #header a.ic-app-header__menu-list-link {
+body #header a.ic-app-header__menu-list-link {
     color: var(--text);
     background-color: transparent; /* keep explicit */
     transition: background-color 120ms ease, color 120ms ease;
 }
-body.home #header li.ic-app-header__menu-list-item:hover {
+body #header li.ic-app-header__menu-list-item:hover {
     background-color: var(--grey-40);
 }
-body.home #header li.ic-app-header__menu-list-item--active a.ic-app-header__menu-list-link {
+body #header li.ic-app-header__menu-list-item--active a.ic-app-header__menu-list-link {
     color: var(--primary-active);
 }
-body.home #header li.ic-app-header__menu-list-item--active:hover {
+body #header li.ic-app-header__menu-list-item--active:hover {
     background-color: var(--active-hover-background);
 }
 
 /* If icons don't inherit color, as a fallback: */
-body.home #header li.ic-app-header__menu-list-item a div svg {
+body #header li.ic-app-header__menu-list-item a div svg {
     fill: currentColor;
 }
 
 /* ========================================
     Global nav (left)
 ======================================== */
-body.home #sticky-container a {
+body #sticky-container a {
     color: var(--text);
     transition: background-color 120ms ease, color 120ms ease;
 }
-body.home #sticky-container a:hover {
+body #sticky-container a:hover {
     background-color: var(--grey-40);
 }
-body.home #sticky-container a.active {
+body #sticky-container a.active {
     color: var(--primary-active);
 }
-body.home #sticky-container a.active:hover {
+body #sticky-container a.active:hover {
     background-color: var(--active-hover-background);
 }
 
 /* ========================================
     Links
 ======================================== */
-body.home a {
+body a {
     color: var(--primary);
     text-decoration: none;
 }
-body.home a:hover,
-body.home a:focus-visible {
+body a:hover,
+body a:focus-visible {
     color: var(--primary-hover);
     text-decoration: underline;
 }
-body.home a:active {
+body a:active {
     color: var(--primary-active);
 }
-body.home a:visited {
+body a:visited {
     color: var(--info);
 }
 
 /* Visible keyboard focus for interactive controls */
-body.home :where(a, button, [role="button"], .btn):focus-visible {
+body :where(a, button, [role="button"], .btn):focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
@@ -107,20 +107,20 @@ div.ic-app-header__secondary-navigation #primaryNavToggle {
 /* ========================================
     Page chrome
 ======================================== */
-body.home .course-title { color: var(--text); }
-body.home .header-bar { background-color: transparent; }
+body .course-title { color: var(--text); }
+body .header-bar { background-color: transparent; }
 
-body.home #planner-todosidebar-item-list { color: var(--text); }
+body #planner-todosidebar-item-list { color: var(--text); }
 
-body.home #breadcrumbs {
+body #breadcrumbs {
     background-color: var(--surface);
     color: var(--text);
 }
 
-body.home #left-side > a { color: var(--text); }
+body #left-side > a { color: var(--text); }
 
 /* Badge: keep readable or intentionally hide */
-body.home .nav-badge {
+body .nav-badge {
     background-color: var(--grey-40);
     color: var(--text);
     border-radius: 9999px;
@@ -129,29 +129,29 @@ body.home .nav-badge {
 }
 
 /* Buttons */
-body.home .btn {
+body .btn {
     color: var(--text);
     background-color: var(--grey-40);
     border: 1px solid rgba(255,255,255,0.12);
     transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
-body.home .btn:hover {
+body .btn:hover {
     background-color: var(--active-hover-background);
     border-color: rgba(255,255,255,0.24);
 }
-body.home .btn:active {
+body .btn:active {
     background-color: #123038;
     border-color: rgba(255,255,255,0.32);
 }
 
 /* Modules */
-body.home .item-group-container {
+body .item-group-container {
     background-color: var(--surface);
 }
 
 /* Optional removals (keep as-is if you really want them gone) */
-body.home .module-sequence-footer,
-body.home #immersive_reader_mount_point {
+body .module-sequence-footer,
+body #immersive_reader_mount_point {
     display: none !important;
 }
 
