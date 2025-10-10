@@ -49,12 +49,12 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
 }
 
 .nav-badge {
-    background: var(--info) !important;
+    background-color: var(--info) !important;
     color: var(--transparent) !important;
 }
 
 .btn {
-    background: inherit !important;
+    background-color: inherit !important;
 }
 
 /* Remove immersive reader */
@@ -63,15 +63,15 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
 }
 
 /* Nab bar */
-#sticky-container > a {
+#sticky-container a {
     color: var(--text) !important;
 }
-#sticky-container > a:hover {
-    background: var(--Dark-Grey-40) !important;
+#sticky-container a:hover {
+    background-color: var(--Dark-Grey-40) !important;
 }
 a.active {
     color: var(--active) !important;
 }
 a.active:hover {
-    background: var(--active-hover-background) !important;
+    background-color: var(--active-hover-background) !important;
 }
