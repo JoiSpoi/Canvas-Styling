@@ -24,7 +24,13 @@ body {
 #header {
     background-color: var(--background) !important;
 }
-#header li.ic-app-header__menu-list-item--active {
+#header li.ic-app-header__menu-list-item a div svg {
+    fill: var(--text) !important;
+}
+#header li.ic-app-header__menu-list-item:hover {
+    background-color: var(--Dark-Grey-40) !important;
+}
+#header li.ic-app-header__menu-list-item--active a div svg {
     fill: var(--active) !important;
 }
 #header a.ic-app-header__menu-list-link {
@@ -33,25 +39,19 @@ body {
 #header li.ic-app-header__menu-list-item--active:hover {
     background-color: var(--active-hover-background) !important;
 }
-#header li.ic-app-header__menu-list-item {
-    fill: var(--text) !important;
-}
-#header li.ic-app-header__menu-list-item:hover {
-    background-color: var(--Dark-Grey-40) !important;
-}
 
 /* Nav bar */
-#sticky-container a.active {
-    color: var(--active) !important;
-}
-#sticky-container a.active:hover {
-    background-color: var(--active-hover-background) !important;
-}
 #sticky-container a {
     color: var(--text) !important;
 }
 #sticky-container a:hover {
     background-color: var(--Dark-Grey-40) !important;
+}
+#sticky-container a.active {
+    color: var(--active) !important;
+}
+#sticky-container a.active:hover {
+    background-color: var(--active-hover-background) !important;
 }
 
 /* Base link styles*/
