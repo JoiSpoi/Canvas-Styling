@@ -26,15 +26,16 @@ body {
 }
 #header li.ic-app-header__menu-list-item--active {
     fill: var(--active) !important;
+    background-color: inherit !important;
 }
 #header li.ic-app-header__menu-list-item--active:hover {
     background-color: var(--active-hover-background) !important;
 }
 #header li.ic-app-header__menu-list-item {
-    fill: var(--text)
+    fill: var(--text) !important;
 }
 #header li.ic-app-header__menu-list-item:hover {
-    background-color: var(--Dark-Grey-40);
+    background-color: var(--Dark-Grey-40) !important;
 }
 
 /* Nav bar */
