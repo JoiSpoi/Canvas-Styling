@@ -8,9 +8,9 @@
     --primary: #00cadb;
     --hover: #61dce9;
     --active: #a6ecf4;
+    --active-hover-background: #18343c
 
     --Dark-Grey-40: #3a3944;
-
 }
 
 /* Base rules for the new styles */
@@ -71,4 +71,7 @@ li.ic-app-header__menu-list-item:has(#global_nav_conversations_link,#global_nav_
 }
 a.active {
     color: var(--active) !important;
+}
+a.active:hover {
+    background: var(--active-hover-background) !important;
 }
