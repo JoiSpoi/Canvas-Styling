@@ -1,6 +1,7 @@
 /* Variables */
 :root {
     --box: #23222b;
+    --background: #1c1b22;
     --text: #fbfbfe;
     --info: #84c6ff;
     --transparent: #00000000;
@@ -17,6 +18,10 @@
 body {
     background-color: var(--box) !important;
     color: var(--text) !important;
+}
+
+#header {
+    background-color: var(--background) !important;
 }
 
 /* Base link styles*/
