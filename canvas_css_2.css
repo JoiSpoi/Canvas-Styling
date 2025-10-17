@@ -130,7 +130,7 @@ body #header {
 /* ========================================
 Course Navbar (left)
 ======================================== */
-body[class^="context-course_"] #sticky-container a {
+body[class*="context-course_"] #sticky-container a {
     color: var(--text);
     transition: background-color 120ms ease, color 120ms ease;
     text-decoration: none;
@@ -151,7 +151,7 @@ body[class^="context-course_"] #sticky-container a {
 ======================================== */
 
 /* Course Home Page */
-body[class^="context-course_"].home {
+body[class*="context-course_"].home {
     & .course-title { color: var(--text); }
     & .sticky-toolbar.header-bar { background-color: var(--surface) !important; color: var(--text) !important; }
     /* To Do planner on the right side */
@@ -168,7 +168,7 @@ body[class^="context-course_"].home {
 }
 
 /* Badge: keep readable or intentionally hide */
-body[class^="context-course_"] .nav-badge {
+body[class*="context-course_"] .nav-badge {
     background-color: var(--hover-background);
     color: var(--text);
     border-radius: 9999px;
@@ -177,13 +177,13 @@ body[class^="context-course_"] .nav-badge {
 }
 
 /* Modules */
-body[class^="context-course_"] .item-group-container {
+body[class*="context-course_"] .item-group-container {
     background-color: var(--surface);
 }
 
 /* Optional removals (keep as-is if you really want them gone) */
-body[class^="context-course_"] .module-sequence-footer,
-body[class^="context-course_"] #immersive_reader_mount_point {
+body[class*="context-course_"] .module-sequence-footer,
+body[class*="context-course_"] #immersive_reader_mount_point {
     display: none !important;
 }
 
