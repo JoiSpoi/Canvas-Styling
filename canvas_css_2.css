@@ -4,7 +4,7 @@
 :root {
     --surface: #23222b;           /* main containers */
     --surface-2: #1c1b22;         /* header / elevated */
-    --text: #fbfbfe;
+    --text: rgb(251, 251, 254);
     --info: #84c6ff;
     --primary: #00cadb;
     --primary-hover: #39d0e0;     /* darker than #61dce9 for better contrast */
@@ -18,6 +18,23 @@ html {
     color-scheme: dark;
 }
 
+
+/*
+with-left-side
+course-menu-expanded
+with-right-side
+padless-content
+pages
+home
+primary-nav-transitions
+context-course_9401
+responsive_student_grades_page
+ff
+no-touch
+show
+*/
+
+
 /* Scope everything to Canvas app shell to avoid collateral effects */
 body {
     background-color: var(--surface);
@@ -25,67 +42,64 @@ body {
 }
 
 /* ========================================
-    Header
+    Global Header
+    To select courses, calander, etc.
 ======================================== */
 body #header {
     background-color: var(--surface-2);
-}
 
-/* Prefer currentColor for icons; set color on link, not svg fill */
-body #header a.ic-app-header__menu-list-link {
-    color: var(--text);
-    background-color: transparent; /* keep explicit */
-    transition: background-color 120ms ease, color 120ms ease;
-}
-body #header li.ic-app-header__menu-list-item:hover {
-    background-color: var(--grey-40);
-}
-body #header li.ic-app-header__menu-list-item--active a.ic-app-header__menu-list-link {
-    color: var(--primary-active);
-}
-body #header li.ic-app-header__menu-list-item--active:hover {
-    background-color: var(--active-hover-background);
-}
+    /* Prefer currentColor for icons; set color on link, not svg fill */
+    a.ic-app-header__menu-list-link {
+        color: var(--text);
+        background-color: transparent; /* keep explicit */
+        transition: background-color 120ms ease, color 120ms ease;
+    }
 
-/* If icons don't inherit color, as a fallback: */
-body #header li.ic-app-header__menu-list-item a div svg {
-    fill: currentColor;
-}
-
-/* ========================================
-    Global nav (left)
-======================================== */
-body #sticky-container a {
-    color: var(--text);
-    transition: background-color 120ms ease, color 120ms ease;
-}
-body #sticky-container a:hover {
-    background-color: var(--grey-40);
-}
-body #sticky-container a.active {
-    color: var(--primary-active);
-}
-body #sticky-container a.active:hover {
-    background-color: var(--active-hover-background);
+    /* All list elements */
+    li.ic-app-header__menu-list-item {
+        li.ic-app-header__menu-list-item:hover {
+            background-color: var(--grey-40);
+        }
+        /* If icons don't inherit color, as a fallback: */
+        a div svg {
+            fill: currentColor;
+        }
+    }
+    /* Active list element (Site that the user is currently in) */
+    li.ic-app-header__menu-list-item--active {
+        a.ic-app-header__menu-list-link {
+            color: var(--primary-active);
+        }
+        &:hover {
+            background-color: var(--active-hover-background);
+        }
+    }
+    /* Hide specific navbar items */
+    #global_nav_conversations_link,
+    #global_nav_history_link,
+    #context_external_tool_262_menu_item,
+    div.ic-app-header__secondary-navigation #primaryNavToggle {
+        display: none !important; /* keep !important here to beat inline styles */
+    }
 }
 
 /* ========================================
-    Links
+Links
 ======================================== */
 body a {
     color: var(--primary);
     text-decoration: none;
-}
-body a:hover,
-body a:focus-visible {
-    color: var(--primary-hover);
-    text-decoration: underline;
-}
-body a:active {
-    color: var(--primary-active);
-}
-body a:visited {
-    color: var(--info);
+    &:hover,
+    &:focus-visible {
+        color: var(--primary-hover);
+        text-decoration: underline;
+    }
+    &:active {
+        color: var(--primary-active);
+    }
+    &:visited { /* don't want a special style for visited links */
+        color: var(--info);
+    }
 }
 
 /* Visible keyboard focus for interactive controls */
@@ -95,32 +109,62 @@ body :where(a, button, [role="button"], .btn):focus-visible {
 }
 
 /* ========================================
-    Hide specific navbar items (lighter + faster than :has)
+Buttons
 ======================================== */
-#global_nav_conversations_link,
-#global_nav_history_link,
-#context_external_tool_262_menu_item,
-div.ic-app-header__secondary-navigation #primaryNavToggle {
-    display: none !important; /* keep !important here to beat inline styles */
+body .btn {
+    color: var(--text);
+    background-color: var(--grey-40);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+
+    &:hover {
+        background-color: var(--active-hover-background);
+        border-color: rgba(255,255,255,0.24);
+    }
+    &:active {
+        background-color: #123038;
+        border-color: rgba(255,255,255,0.32);
+    }
 }
 
 /* ========================================
-    Page chrome
+    Course Navbar (left)
 ======================================== */
-body .course-title { color: var(--text); }
-body .header-bar { background-color: transparent; }
-
-body #planner-todosidebar-item-list { color: var(--text); }
-
-body #breadcrumbs {
-    background-color: var(--surface);
+body[class^="context-course_"] #sticky-container a {
     color: var(--text);
+    transition: background-color 120ms ease, color 120ms ease;
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--grey-40);
+    }
+    &.active {
+        color: var(--primary-active);
+    }
+    &.active:hover {
+        background-color: var(--active-hover-background);
+    }
 }
 
-body #left-side > a { color: var(--text); }
+/* ========================================
+    Course Pages
+======================================== */
+
+/* Course Home Page */
+body[class^="context-course_"].home {
+    .course-title { color: var(--text); }
+    .header-bar { background-color: transparent; }
+    /* To Do planner on the right side */
+    #planner-todosidebar-item-list { color: var(--text); }
+
+    #breadcrumbs {
+        background-color: var(--surface);
+        color: var(--text);
+    }
+}
 
 /* Badge: keep readable or intentionally hide */
-body .nav-badge {
+body[class^="context-course_"] .nav-badge {
     background-color: var(--grey-40);
     color: var(--text);
     border-radius: 9999px;
@@ -128,30 +172,14 @@ body .nav-badge {
     font-weight: 600;
 }
 
-/* Buttons */
-body .btn {
-    color: var(--text);
-    background-color: var(--grey-40);
-    border: 1px solid rgba(255,255,255,0.12);
-    transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
-}
-body .btn:hover {
-    background-color: var(--active-hover-background);
-    border-color: rgba(255,255,255,0.24);
-}
-body .btn:active {
-    background-color: #123038;
-    border-color: rgba(255,255,255,0.32);
-}
-
 /* Modules */
-body .item-group-container {
+body[class^="context-course_"] .item-group-container {
     background-color: var(--surface);
 }
 
 /* Optional removals (keep as-is if you really want them gone) */
-body .module-sequence-footer,
-body #immersive_reader_mount_point {
+body[class^="context-course_"] .module-sequence-footer,
+body[class^="context-course_"] #immersive_reader_mount_point {
     display: none !important;
 }
 
