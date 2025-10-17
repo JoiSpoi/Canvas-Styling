@@ -79,7 +79,7 @@ body #header {
     #global_nav_history_link,
     #context_external_tool_262_menu_item,
     div.ic-app-header__secondary-navigation #primaryNavToggle {
-        display: none !important; /* keep !important here to beat inline styles */
+        display: none !important;
     }
 }
 
@@ -88,11 +88,10 @@ Links
 ======================================== */
 body a {
     color: var(--primary);
-    text-decoration: none;
+    text-decoration: none !important;
     &:hover,
     &:focus-visible {
         color: var(--primary-hover);
-        text-decoration: underline;
     }
     &:active {
         color: var(--primary-active);
@@ -153,13 +152,17 @@ body[class^="context-course_"] #sticky-container a {
 /* Course Home Page */
 body[class^="context-course_"].home {
     .course-title { color: var(--text); }
-    .header-bar { background-color: transparent; }
+    .header-bar { background-color: transparent !important; color: inherit !important; }
     /* To Do planner on the right side */
-    #planner-todosidebar-item-list { color: var(--text); }
-
-    #breadcrumbs {
-        background-color: var(--surface);
+    #planner-todosidebar-item-list {
         color: var(--text);
+        a.css-qiahew-view-link {
+            color: var()
+        }
+    }
+    #breadcrumbs {
+        background-color: inherit !important;
+        color: inherit !important;
     }
 }
 
